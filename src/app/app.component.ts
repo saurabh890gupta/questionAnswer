@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+  data=0;
+constructor(){
+
+}
+updateData(item:any){
+  console.log("item",item)
+this.data=item
+}
+
 }

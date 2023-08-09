@@ -1,0 +1,32 @@
+
+<!-- <div *ngIf="isShow">
+<app-new-child></app-new-child>
+</div> -->
+
+<div>
+                    <span>Please Tell us about your self</span>
+                    <textarea type="text" id="textData" (keyup)="textDataBind(textData)"></textarea>
+</div>   
+<h3>{{data.question}}</h3>   
+<ul *ngFor="let k of data.admins">
+    <input type="checkbox" />
+    
+    <li *ngFor="let k of data.admins">
+        <h3> <span>Question : {{k.companyName}}</span></h3>
+   <input type="checkbox"  
+       (change)="expression && expression[k.admin.name]=$event.target.checked ? true : undefined"
+       [ngModel]="expression && expression[k.admin.name]">
+      
+   
+
+  </ul>
+
+
+<div>
+    <a  (click)="changeValue()">Add Question</a>
+</div>
+
+
+<div>
+    <a routerLink="/answer" [routerLinkActive]="['active']"  type="button" class="btn btn-primary">Review my answer</a>
+</div>

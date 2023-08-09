@@ -1,0 +1,17 @@
+
+<h1>add New Question</h1>
+<div [formGroup]="companyForm">
+    <div>
+        <label for="companyName">Question</label>
+        <input id="companyName" type="text" formControlName="companyName" />
+    </div> 
+    <ng-container formArrayName="admins">
+        <ng-container *ngFor="let adminForm of admins.controls; let index = index">
+            <div [formGroupName]="index">
+                <input id="name" type="text" formControlName="name" />
+            </div>
+        </ng-container>
+    </ng-container>
+    <button type="button" (click)="addNewAdmin()">Add</button>
+    <button type="button" (click)="submit()">submit</button>
+</div>
